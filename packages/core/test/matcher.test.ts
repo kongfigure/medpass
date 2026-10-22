@@ -3,6 +3,7 @@ import {
   checkMedicationList,
   checkNewMedication,
   defaultDataset as data,
+  matchesAvoidEntry,
   normalizeName,
   resolveDrug,
   suggestDrugs,
@@ -145,6 +146,22 @@ describe("checking a new medication", () => {
 
   it("always includes the disclaimer", () => {
     expect(checkNewMedication([], "Ibuprofen", data).disclaimer).toMatch(/not medical advice/);
+  });
+});
+
+describe("avoid-list matching", () => {
+  it("treats brand and generic names as the same drug", () => {
+    expect(matchesAvoidEntry("Advil", "Ibuprofen 200mg", data)).toBe(true);
+  });
+
+  it("does not infer related drugs", () => {
+    expect(matchesAvoidEntry("Naproxen", "Ibuprofen", data)).toBe(false);
+  });
+
+  it("falls back to exact name match for drugs outside the dataset", () => {
+    expect(matchesAvoidEntry("Mystery Pill", "mystery pill", data)).toBe(true);
+    expect(matchesAvoidEntry("Mystery Pill", "Ibuprofen", data)).toBe(false);
+    expect(matchesAvoidEntry("", "", data)).toBe(false);
   });
 });
 

@@ -1,4 +1,4 @@
-import { resolveDrug } from "./normalize";
+import { normalizeName, resolveDrug } from "./normalize";
 import type { CheckReport, Dataset, Drug, Finding, Interaction, Severity } from "./types";
 
 export const DISCLAIMER =
@@ -86,6 +86,19 @@ export function checkNewMedication(
     statement: statementFor(findings, unrecognized),
     disclaimer: DISCLAIMER,
   };
+}
+
+/**
+ * Does a medicine the patient is about to take match something on their own
+ * "avoid" list? Only exact same-drug matches count (brand and generic names are
+ * treated as the same drug). We deliberately do not infer related drugs here.
+ */
+export function matchesAvoidEntry(newMed: string, avoidName: string, dataset: Dataset): boolean {
+  const a = resolveDrug(newMed, dataset);
+  const b = resolveDrug(avoidName, dataset);
+  if (a && b) return a.id === b.id;
+  if (a || b) return false;
+  return normalizeName(newMed) !== "" && normalizeName(newMed) === normalizeName(avoidName);
 }
 
 /** Check every pair on a medication list (e.g. for the share card). */

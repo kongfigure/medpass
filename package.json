@@ -1,0 +1,15 @@
+{
+  "name": "medpass",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A patient-held medication passport that flags known interaction risks when care moves between providers.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "test": "npm test --workspace @medpass/core",
+    "dev": "npm run dev --workspace @medpass/web",
+    "build": "npm run build --workspace @medpass/web"
+  }
+}

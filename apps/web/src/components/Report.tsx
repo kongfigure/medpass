@@ -7,7 +7,7 @@ const SEVERITY_LABEL: Record<Severity, string> = {
 };
 
 /** Each severity has its own shape, so meaning never depends on color alone. */
-function SeverityIcon({ severity }: { severity: Severity }) {
+export function SeverityIcon({ severity }: { severity: Severity }) {
   const common = { width: 22, height: 22, viewBox: "0 0 24 24", "aria-hidden": true, fill: "none" } as const;
   if (severity === "avoid") {
     return (

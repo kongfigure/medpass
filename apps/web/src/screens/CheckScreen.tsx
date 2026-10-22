@@ -1,7 +1,7 @@
 import { checkNewMedication, defaultDataset, matchesAvoidEntry, type CheckReport } from "@medpass/core";
 import { useEffect, useRef, useState } from "react";
 import { DrugInput } from "../components/DrugInput";
-import { Report } from "../components/Report";
+import { Report, SeverityIcon } from "../components/Report";
 import type { AppState } from "../store";
 
 interface Result {
@@ -55,7 +55,10 @@ export function CheckScreen({ state }: { state: AppState }) {
           {result.avoidHits.map((a) => (
             <article key={a.name} className="finding finding-avoid">
               <header className="finding-head">
-                <span className="finding-badge">On your avoid list</span>
+                <span className="finding-badge">
+                  <SeverityIcon severity="avoid" />
+                  On your avoid list
+                </span>
                 <h3>{a.name}</h3>
               </header>
               <p>{a.reason || "You noted this medicine to avoid."}</p>

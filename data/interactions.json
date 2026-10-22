@@ -156,7 +156,7 @@
       "severity": "major",
       "summary": "Clopidogrel (Plavix) together with warfarin increases the risk of bleeding.",
       "why": "The two drugs affect clotting in independent ways, so the risks add up.",
-      "action": "This combination is sometimes prescribed on purpose. Make sure every prescriber knows you take both.",
+      "action": "Make sure every prescriber knows you take both, and ask before adding any new medicine that affects bleeding.",
       "source": {
         "title": "Plavix (clopidogrel) prescribing information",
         "section": "7.4 Warfarin",
@@ -252,7 +252,7 @@
       "severity": "major",
       "summary": "Tramadol with an SSRI antidepressant can cause serotonin syndrome and raises seizure risk.",
       "why": "The tramadol label warns that serotonin syndrome, which can be life-threatening, has occurred with serotonergic drugs, and that SSRIs raise seizure risk.",
-      "action": "Ask your prescriber or pharmacist before combining. Seek urgent care for agitation, fever, fast heartbeat, muscle twitching, or confusion.",
+      "action": "Ask your prescriber or pharmacist before combining, and ask which warning signs to watch for.",
       "source": {
         "title": "Tramadol hydrochloride tablets, prescribing information",
         "section": "5.9 Serotonin Syndrome; 5.10 Seizure Risk",
@@ -268,7 +268,7 @@
       "severity": "major",
       "summary": "Tramadol with an SNRI antidepressant can cause serotonin syndrome.",
       "why": "The tramadol label lists SNRIs among the serotonergic drugs associated with life-threatening serotonin syndrome.",
-      "action": "Ask your prescriber or pharmacist before combining. Seek urgent care for agitation, fever, fast heartbeat, muscle twitching, or confusion.",
+      "action": "Ask your prescriber or pharmacist before combining, and ask which warning signs to watch for.",
       "source": {
         "title": "Tramadol hydrochloride tablets, prescribing information",
         "section": "5.9 Serotonin Syndrome",
@@ -284,7 +284,7 @@
       "severity": "avoid",
       "summary": "Sildenafil must not be taken with nitrate medicines. The combination can cause a dangerous drop in blood pressure.",
       "why": "The sildenafil label lists nitrates as a contraindication because sildenafil strengthens their blood-pressure-lowering effect.",
-      "action": "Do not take them together. If you have chest pain after taking sildenafil, tell emergency staff you took it.",
+      "action": "Do not take them together. Make sure every prescriber knows about both.",
       "source": {
         "title": "Sildenafil tablets, prescribing information",
         "section": "4.1 Contraindications: Nitrates",

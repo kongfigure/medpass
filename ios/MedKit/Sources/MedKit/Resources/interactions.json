@@ -1,0 +1,313 @@
+{
+  "meta": {
+    "version": "0.1.0",
+    "reviewedOn": "2026-10-22",
+    "scope": "Starter set of well-documented interaction warnings taken from FDA labeling. It is NOT exhaustive. Absence of a match never means a combination is safe.",
+    "severityLevels": {
+      "avoid": "The label says not to use together, or lists the combination as a contraindication.",
+      "major": "The label describes a serious risk and calls for caution. Ask a doctor or pharmacist before combining.",
+      "monitor": "The label says the combination may cause a problem and advises monitoring or checking with a clinician."
+    }
+  },
+  "classes": [
+    { "id": "nsaid", "name": "NSAID pain relievers (non-aspirin)", "members": ["ibuprofen", "naproxen", "diclofenac", "ketorolac", "meloxicam", "celecoxib", "indomethacin"] },
+    { "id": "ssri", "name": "SSRI antidepressants", "members": ["sertraline", "fluoxetine", "citalopram", "escitalopram", "paroxetine"] },
+    { "id": "snri", "name": "SNRI antidepressants", "members": ["venlafaxine", "duloxetine"] },
+    { "id": "opioid", "name": "Opioid pain medicines", "members": ["tramadol", "oxycodone", "hydrocodone", "codeine", "morphine"] },
+    { "id": "benzodiazepine", "name": "Benzodiazepines", "members": ["alprazolam", "lorazepam", "diazepam", "clonazepam"] },
+    { "id": "nitrate", "name": "Nitrates (heart/chest-pain medicines)", "members": ["nitroglycerin", "isosorbide-mononitrate", "isosorbide-dinitrate"] }
+  ],
+  "drugs": [
+    { "id": "warfarin", "name": "Warfarin", "aliases": ["coumadin", "jantoven"] },
+    { "id": "apixaban", "name": "Apixaban", "aliases": ["eliquis"] },
+    { "id": "clopidogrel", "name": "Clopidogrel", "aliases": ["plavix"] },
+    { "id": "aspirin", "name": "Aspirin", "aliases": ["bayer", "ecotrin", "acetylsalicylic acid", "asa"] },
+    { "id": "ibuprofen", "name": "Ibuprofen", "aliases": ["advil", "motrin"] },
+    { "id": "naproxen", "name": "Naproxen", "aliases": ["aleve", "naprosyn"] },
+    { "id": "diclofenac", "name": "Diclofenac", "aliases": ["voltaren"] },
+    { "id": "ketorolac", "name": "Ketorolac", "aliases": ["toradol"] },
+    { "id": "meloxicam", "name": "Meloxicam", "aliases": ["mobic"] },
+    { "id": "celecoxib", "name": "Celecoxib", "aliases": ["celebrex"] },
+    { "id": "indomethacin", "name": "Indomethacin", "aliases": ["indocin"] },
+    { "id": "omeprazole", "name": "Omeprazole", "aliases": ["prilosec"] },
+    { "id": "esomeprazole", "name": "Esomeprazole", "aliases": ["nexium"] },
+    { "id": "sertraline", "name": "Sertraline", "aliases": ["zoloft"] },
+    { "id": "fluoxetine", "name": "Fluoxetine", "aliases": ["prozac"] },
+    { "id": "citalopram", "name": "Citalopram", "aliases": ["celexa"] },
+    { "id": "escitalopram", "name": "Escitalopram", "aliases": ["lexapro"] },
+    { "id": "paroxetine", "name": "Paroxetine", "aliases": ["paxil"] },
+    { "id": "venlafaxine", "name": "Venlafaxine", "aliases": ["effexor"] },
+    { "id": "duloxetine", "name": "Duloxetine", "aliases": ["cymbalta"] },
+    { "id": "tramadol", "name": "Tramadol", "aliases": ["ultram"] },
+    { "id": "oxycodone", "name": "Oxycodone", "aliases": ["oxycontin", "roxicodone", "percocet"] },
+    { "id": "hydrocodone", "name": "Hydrocodone", "aliases": ["vicodin", "norco"] },
+    { "id": "codeine", "name": "Codeine", "aliases": ["tylenol with codeine", "tylenol 3"] },
+    { "id": "morphine", "name": "Morphine", "aliases": ["ms contin"] },
+    { "id": "alprazolam", "name": "Alprazolam", "aliases": ["xanax"] },
+    { "id": "lorazepam", "name": "Lorazepam", "aliases": ["ativan"] },
+    { "id": "diazepam", "name": "Diazepam", "aliases": ["valium"] },
+    { "id": "clonazepam", "name": "Clonazepam", "aliases": ["klonopin"] },
+    { "id": "sildenafil", "name": "Sildenafil", "aliases": ["viagra", "revatio"] },
+    { "id": "nitroglycerin", "name": "Nitroglycerin", "aliases": ["nitrostat", "nitro-dur", "glyceryl trinitrate"] },
+    { "id": "isosorbide-mononitrate", "name": "Isosorbide mononitrate", "aliases": ["imdur", "ismo"] },
+    { "id": "isosorbide-dinitrate", "name": "Isosorbide dinitrate", "aliases": ["isordil"] },
+    { "id": "metronidazole", "name": "Metronidazole", "aliases": ["flagyl"] },
+    { "id": "lisinopril", "name": "Lisinopril", "aliases": ["zestril", "prinivil"] }
+  ],
+  "interactions": [
+    {
+      "id": "warfarin-nsaid",
+      "a": "warfarin",
+      "b": "class:nsaid",
+      "severity": "major",
+      "summary": "Taking an NSAID pain reliever with warfarin can raise the risk of bleeding.",
+      "why": "NSAIDs can interfere with platelets and can cause stomach bleeding or ulcers, which adds to warfarin's blood-thinning effect.",
+      "action": "Do not start an NSAID (ibuprofen, naproxen, etc.) without asking the doctor who manages your warfarin, or your pharmacist. Ask what to use for pain instead.",
+      "source": {
+        "title": "Warfarin sodium tablets, prescribing information",
+        "section": "Consideration for Increased Bleeding Risk; Information for Patients",
+        "url": "https://medlibrary.org/lib/rx/meds/warfarin-sodium-4/page/7/",
+        "note": "MedLibrary mirror of the FDA label text. Confirm against DailyMed.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "warfarin-aspirin",
+      "a": "warfarin",
+      "b": "aspirin",
+      "severity": "major",
+      "summary": "Aspirin taken with warfarin can raise the risk of bleeding.",
+      "why": "Aspirin can inhibit platelet aggregation and can cause stomach bleeding, ulcers, or perforation.",
+      "action": "Do not add or stop aspirin on your own. The warfarin label tells patients to check with their doctor before taking other medicines, including aspirin products.",
+      "source": {
+        "title": "Warfarin sodium tablets, prescribing information",
+        "section": "Consideration for Increased Bleeding Risk; Information for Patients",
+        "url": "https://medlibrary.org/lib/rx/meds/warfarin-sodium-4/page/7/",
+        "note": "MedLibrary mirror of the FDA label text. Confirm against DailyMed.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "warfarin-metronidazole",
+      "a": "warfarin",
+      "b": "metronidazole",
+      "severity": "monitor",
+      "summary": "Metronidazole (an antibiotic often used for dental and other infections) can strengthen the effect of warfarin.",
+      "why": "The label says it can prolong clotting time, so bleeding risk can go up unless blood tests (PT/INR) are watched closely.",
+      "action": "Tell whoever prescribes metronidazole that you take warfarin, and ask whether your INR needs checking.",
+      "source": {
+        "title": "Metronidazole prescribing information",
+        "section": "Drug Interactions: Warfarin and other oral anticoagulants",
+        "url": "https://prescriberpoint.com/therapies/metronidazole-9f1fec8",
+        "note": "Third-party site reproducing the label. Verify wording on DailyMed before relying on it.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "apixaban-aspirin",
+      "a": "apixaban",
+      "b": "aspirin",
+      "severity": "major",
+      "summary": "Aspirin with apixaban (Eliquis) can raise the risk of bleeding.",
+      "why": "The label says drugs that affect clotting, including aspirin, increase the risk of bleeding when taken with apixaban.",
+      "action": "Do not add aspirin without checking with your prescriber.",
+      "source": {
+        "title": "Eliquis (apixaban) prescribing information",
+        "section": "5.2 Bleeding; 7.3 Anticoagulants and Antiplatelet Agents",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/202155Orig1s039%2Cs040lbl.pdf",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "apixaban-nsaid",
+      "a": "apixaban",
+      "b": "class:nsaid",
+      "severity": "major",
+      "summary": "NSAID pain relievers with apixaban (Eliquis) can raise the risk of bleeding.",
+      "why": "The label lists NSAIDs among drugs that increase the risk of bleeding when taken with apixaban, and tells patients to mention aspirin or NSAIDs to their clinicians.",
+      "action": "Ask your prescriber or pharmacist what pain reliever is appropriate before taking an NSAID.",
+      "source": {
+        "title": "Eliquis (apixaban) prescribing information",
+        "section": "5.2 Bleeding; 7.3 Anticoagulants and Antiplatelet Agents; 17 Patient Counseling",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/202155Orig1s039%2Cs040lbl.pdf",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "clopidogrel-nsaid",
+      "a": "clopidogrel",
+      "b": "class:nsaid",
+      "severity": "major",
+      "summary": "NSAID pain relievers with clopidogrel (Plavix) increase the risk of stomach and intestinal bleeding.",
+      "why": "The label states that taking them together increases the risk of gastrointestinal bleeding.",
+      "action": "Check with your prescriber or pharmacist before using an NSAID.",
+      "source": {
+        "title": "Plavix (clopidogrel) prescribing information",
+        "section": "7.3 NSAIDs",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/020839s072lbl.pdf",
+        "note": "2019 label version. Check for a newer one.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "clopidogrel-warfarin",
+      "a": "clopidogrel",
+      "b": "warfarin",
+      "severity": "major",
+      "summary": "Clopidogrel (Plavix) together with warfarin increases the risk of bleeding.",
+      "why": "The two drugs affect clotting in independent ways, so the risks add up.",
+      "action": "Make sure every prescriber knows you take both, and ask before adding any new medicine that affects bleeding.",
+      "source": {
+        "title": "Plavix (clopidogrel) prescribing information",
+        "section": "7.4 Warfarin",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/020839s072lbl.pdf",
+        "note": "2019 label version. Check for a newer one.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "clopidogrel-ssri",
+      "a": "clopidogrel",
+      "b": "class:ssri",
+      "severity": "monitor",
+      "summary": "SSRI antidepressants taken with clopidogrel (Plavix) may increase the risk of bleeding.",
+      "why": "The label says SSRIs may increase the risk of bleeding when taken with clopidogrel.",
+      "action": "Make sure both prescribers know about both medicines. Do not stop either one without medical advice.",
+      "source": {
+        "title": "Plavix (clopidogrel) prescribing information",
+        "section": "7.5 SSRIs and SNRIs",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/020839s072lbl.pdf",
+        "note": "2019 label version. Check for a newer one.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "clopidogrel-snri",
+      "a": "clopidogrel",
+      "b": "class:snri",
+      "severity": "monitor",
+      "summary": "SNRI antidepressants taken with clopidogrel (Plavix) may increase the risk of bleeding.",
+      "why": "The label says SNRIs may increase the risk of bleeding when taken with clopidogrel.",
+      "action": "Make sure both prescribers know about both medicines. Do not stop either one without medical advice.",
+      "source": {
+        "title": "Plavix (clopidogrel) prescribing information",
+        "section": "7.5 SSRIs and SNRIs",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/020839s072lbl.pdf",
+        "note": "2019 label version. Check for a newer one.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "clopidogrel-omeprazole",
+      "a": "clopidogrel",
+      "b": "omeprazole",
+      "severity": "avoid",
+      "summary": "Omeprazole (Prilosec) can make clopidogrel (Plavix) work less well.",
+      "why": "The label says omeprazole significantly reduces clopidogrel's antiplatelet activity, and advises avoiding the combination.",
+      "action": "Ask your prescriber or pharmacist about a different stomach-acid medicine.",
+      "source": {
+        "title": "Plavix (clopidogrel) prescribing information",
+        "section": "5.1 and 7.1 (omeprazole and esomeprazole)",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/020839s072lbl.pdf",
+        "note": "2019 label version. Check for a newer one.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "clopidogrel-esomeprazole",
+      "a": "clopidogrel",
+      "b": "esomeprazole",
+      "severity": "avoid",
+      "summary": "Esomeprazole (Nexium) can make clopidogrel (Plavix) work less well.",
+      "why": "The label says esomeprazole significantly reduces clopidogrel's antiplatelet activity, and advises avoiding the combination.",
+      "action": "Ask your prescriber or pharmacist about a different stomach-acid medicine.",
+      "source": {
+        "title": "Plavix (clopidogrel) prescribing information",
+        "section": "5.1 and 7.1 (omeprazole and esomeprazole)",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/020839s072lbl.pdf",
+        "note": "2019 label version. Check for a newer one.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "opioid-benzodiazepine",
+      "a": "class:opioid",
+      "b": "class:benzodiazepine",
+      "severity": "major",
+      "summary": "Opioid pain medicines taken with benzodiazepines can cause profound sedation, slowed breathing, coma, and death.",
+      "why": "FDA required labeling changes warning about this risk and recommending the combination only when there are no adequate alternatives.",
+      "action": "Tell every prescriber about both. Do not combine them or add alcohol unless your prescriber has specifically planned it.",
+      "source": {
+        "title": "FDA Safety Labeling Change Notification: opioids and benzodiazepines",
+        "section": "Concomitant use of opioids with benzodiazepines or other CNS depressants",
+        "url": "https://fda.gov/media/99679/download",
+        "note": "FDA letter under FDCA section 505(o)(4). The retrieved copy shows no letter date.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "tramadol-ssri",
+      "a": "tramadol",
+      "b": "class:ssri",
+      "severity": "major",
+      "summary": "Tramadol with an SSRI antidepressant can cause serotonin syndrome and raises seizure risk.",
+      "why": "The tramadol label warns that serotonin syndrome, which can be life-threatening, has occurred with serotonergic drugs, and that SSRIs raise seizure risk.",
+      "action": "Ask your prescriber or pharmacist before combining, and ask which warning signs to watch for.",
+      "source": {
+        "title": "Tramadol hydrochloride tablets, prescribing information",
+        "section": "5.9 Serotonin Syndrome; 5.10 Seizure Risk",
+        "url": "https://medlibrary.org/lib/rx/meds/tramadol-hydrochloride-80/page/5/",
+        "note": "MedLibrary mirror of the FDA label text. Confirm against DailyMed.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "tramadol-snri",
+      "a": "tramadol",
+      "b": "class:snri",
+      "severity": "major",
+      "summary": "Tramadol with an SNRI antidepressant can cause serotonin syndrome.",
+      "why": "The tramadol label lists SNRIs among the serotonergic drugs associated with life-threatening serotonin syndrome.",
+      "action": "Ask your prescriber or pharmacist before combining, and ask which warning signs to watch for.",
+      "source": {
+        "title": "Tramadol hydrochloride tablets, prescribing information",
+        "section": "5.9 Serotonin Syndrome",
+        "url": "https://medlibrary.org/lib/rx/meds/tramadol-hydrochloride-80/page/5/",
+        "note": "MedLibrary mirror of the FDA label text. Confirm against DailyMed.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "sildenafil-nitrate",
+      "a": "sildenafil",
+      "b": "class:nitrate",
+      "severity": "avoid",
+      "summary": "Sildenafil must not be taken with nitrate medicines. The combination can cause a dangerous drop in blood pressure.",
+      "why": "The sildenafil label lists nitrates as a contraindication because sildenafil strengthens their blood-pressure-lowering effect.",
+      "action": "Do not take them together. Make sure every prescriber knows about both.",
+      "source": {
+        "title": "Sildenafil tablets, prescribing information",
+        "section": "4.1 Contraindications: Nitrates",
+        "url": "https://medlibrary.org/lib/rx/meds/sildenafil-5/",
+        "note": "MedLibrary mirror of the FDA label text. Confirm against DailyMed.",
+        "retrievedOn": "2026-10-22"
+      }
+    },
+    {
+      "id": "lisinopril-nsaid",
+      "a": "lisinopril",
+      "b": "class:nsaid",
+      "severity": "monitor",
+      "summary": "NSAID pain relievers can weaken lisinopril's blood-pressure effect and may worsen kidney function.",
+      "why": "The label says NSAIDs may reduce lisinopril's effect and may cause kidney function to worsen, especially in older people, people on water pills, or people with kidney problems.",
+      "action": "Ask your prescriber or pharmacist before regular NSAID use. Kidney function may need to be checked.",
+      "source": {
+        "title": "Lisinopril prescribing information",
+        "section": "7.3 Non-steroidal anti-inflammatory agents",
+        "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2014/019777s064lbl.pdf",
+        "note": "2014 label version. Check for a newer one.",
+        "retrievedOn": "2026-10-22"
+      }
+    }
+  ]
+}
